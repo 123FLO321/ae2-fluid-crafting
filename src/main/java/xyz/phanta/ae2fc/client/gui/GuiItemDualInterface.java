@@ -35,7 +35,7 @@ public class GuiItemDualInterface extends GuiInterface {
 
     @Override
     protected String getBackground() {
-        return "guis/interface.png";
+        return super.getBackground();
     }
 
     @Override
