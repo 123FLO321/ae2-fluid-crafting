@@ -1,11 +1,13 @@
 package xyz.phanta.ae2fc;
 
 import appeng.api.AEApi;
+import appeng.api.config.Upgrades;
 import appeng.api.definitions.IItemDefinition;
 import appeng.core.AppEng;
 import appeng.core.features.ItemDefinition;
 import appeng.recipes.game.DisassembleRecipe;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -79,6 +81,8 @@ public class CommonProxy {
 
     public void onPostInit(FMLPostInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(Ae2FluidCrafting.INSTANCE, new InventoryHandler());
+        Upgrades.PATTERN_EXPANSION.registerItem(new ItemStack(FcBlocks.DUAL_INTERFACE), 3);
+        Upgrades.PATTERN_EXPANSION.registerItem(new ItemStack(FcItems.PART_DUAL_INTERFACE), 3);
     }
 
     public SimpleNetworkWrapper getNetHandler() {
